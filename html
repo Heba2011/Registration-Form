@@ -1,0 +1,51 @@
+<script>
+function showPreferences() {
+  var department = document.getElementById("department").value;
+  var preferencesDiv = document.getElementById("preferences");
+  var preferenceLabel = document.getElementById("preferenceLabel");
+  preferencesDiv.innerHTML = ""; // Clear previous fields
+  
+  if (department === "ScientificMath") {
+    addPreferenceOptions(["معلم حاسب"], 1);
+  } else if (department === "ScientificScience") {
+    addPreferenceOptions(["معلم حاسب", "تكنولوجيا التعليم", "اعلام تربوي", "اقتصاد منزلي"], 4);
+    addPreferenceOptions(["معلم حاسب", "تكنولوجيا التعليم", "اعلام تربوي", "اقتصاد منزلي"], 4);
+    addPreferenceOptions(["معلم حاسب", "تكنولوجيا التعليم", "اعلام تربوي", "اقتصاد منزلي"], 4);
+    addPreferenceOptions(["معلم حاسب", "تكنولوجيا التعليم", "اعلام تربوي", "اقتصاد منزلي"], 4);
+  } else if (department === "Literary") {
+    addPreferenceOptions(["اقتصاد منزلي", "اعلام تربوي", "تكنولوجيا التعليم"], 3);
+    addPreferenceOptions(["اقتصاد منزلي", "اعلام تربوي", "تكنولوجيا التعليم"], 3);
+    addPreferenceOptions(["اقتصاد منزلي", "اعلام تربوي", "تكنولوجيا التعليم"], 3);
+  } else if (department === "Technical") {
+    addPreferenceOptions(["حسب شعبه الطالب"], 1);
+  }
+  
+  if (department) {
+    preferencesDiv.style.display = "block";
+    preferenceLabel.style.display = "block";
+  } else {
+    preferencesDiv.style.display = "none";
+    preferenceLabel.style.display = "none";
+  }
+}
+
+function addPreferenceOptions(options, maxOptions) {
+  var select = document.createElement("select");
+  select.name = "preference";
+  
+  for (var i = 0; i < options.length && i < maxOptions; i++) {
+    var option = document.createElement("option");
+    option.value = options[i];
+    option.text = options[i];
+    select.appendChild(option);
+  }
+  
+  preferences.appendChild(select);
+  preferences.appendChild(document.createElement("br"));
+}
+</script> 
+  <section>
+  </section>
+
+</body>
+</html>
